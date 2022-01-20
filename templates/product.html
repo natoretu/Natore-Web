@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+</head>
+<body>
+
+
+
+    
+    <img src= {{product.image}} width="250" height="300">
+    <div>
+        Name : {{product.name}}
+    </div>
+    <div>
+        Category : {{product.category}}
+    </div>
+    <div>
+        Market : {{product.market}}
+    </div>
+    <div>
+        Properties : {{product.properties}}
+    </div>
+    <div>
+        Price : {{product.price}}
+    </div>
+    <div>
+        Rate : {{product.rate}}
+    </div>
+    <div>
+        Quantity : {{product.quantity}}
+    </div>
+    <div>
+        {% set count = namespace(value=0) %}
+        {%for comment in product.comments%}
+            <p> {{loop.index0+1}} >> {{ comment['comment'] }}</p>
+                
+                {% for response in product.responses%}
+                    
+                    {%if count.value == response['IndexOfRespondedComment']%}
+                        <p style = "margin-left: 20px;"> {{ response['Response'] }} </p>
+                    {%endif%}
+            
+                {%endfor%}
+            
+                {% set count.value = count.value + 1 %}
+        {%endfor%}
+    </div>
+
+</body>
+</html>

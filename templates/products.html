@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Products</title>
+        <style>
+        .headtext {
+            background-color: #40b8b8; /* Green */
+            /* border: none; */
+            color: white;
+            padding: 8px 17px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        </style>
+
+    </head>
+<body>
+
+    <table>
+        <!-- table header -->
+        {% if products %}
+            <tr>
+                <th>
+                    ---
+                </th>
+                <th class = "headtext" style = "margin-left:18em">
+                    Product Name
+                </th>
+                <th class = "headtext">
+                    Categories
+                </th>
+                <th class = "headtext">
+                    Market
+                </th>
+                <th class = "headtext">
+                    Properties
+                </th >
+                <th class = "headtext">
+                    Price
+                </th>
+                <th class = "headtext">
+                    Rate
+                </th>
+                <th class = "headtext">
+                    Quantity
+                </th>
+            </tr>
+        {% endif %}
+      
+        <!-- table rows -->
+        {% for product in products %}
+            <tr>
+                <td  class = "headtext">
+                    {{loop.index0+1}}
+                </td>
+                <td>
+                    <a href="{{ url_for('product', product_id=product.id ) }}">{{ product.id }}</a>
+                </td>
+                <td>
+                    {{ product.name }}
+                </td>
+                <td>
+                    {{ product.category }}
+                </td>
+                <td>
+                    {{ product.market }}
+                </td>
+                <td>
+                    {{ product.properties }}
+                </td>
+                <td>
+                    {{ product.price }}
+                </td>
+                <td>
+                    {{ product.rate }}
+                </td>
+                <td>
+                    {{ product.quantity }}
+                </td>
+            </tr>
+        {% endfor %}
+      </table>
+    
+</body>
+</html>

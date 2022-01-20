@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Detail</title>
+</head>
+<body>  
+
+
+    <img src = {{user.Image}} width="250" height="300">
+    <div>
+        Email : {{user.Email}}
+    </div>
+    <div>
+        Name : {{user.Name}}
+    </div>
+    <div>
+        Surname : {{user.Surname}}
+    </div>
+    <div>
+        Address : {{user.Adress}}
+    </div>
+        
+    {% if user.saticiMi == true %}
+        <p>Satiic</p>
+        <div>
+            Company Name : {{user.MarketName}}
+        </div>
+        <div>
+            Rate : {{user.Rate}}
+        </div>
+        <div>
+            Work Hours : {{user.TimeCont}}
+        </div>
+    {% endif %}
+    
+</body>
+</html>

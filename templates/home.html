@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+        
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+        
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+        
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+        
+        .centered {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color:rgb(255, 255, 255)
+        }
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .item1 {
+            grid-row: 1 / span 5;
+        }
+        .item2 {
+            grid-row: 3 / span 5;
+        }
+        .button {
+            background-color: #065b8d; /* Green */
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        </style>
+</head>
+<body>
+    
+    <!-- <img src = "https://firebasestorage.googleapis.com/v0/b/natore-52da9.appspot.com/o/ll.jpeg?alt=media&token=97905fd7-2a6d-4e41-abb5-1845dc840b29" style =  "display: block;
+    margin-left: auto;
+    margin-right: auto;
+    "width="750" height="900"> -->
+
+    <div class="container">
+        <img src="https://firebasestorage.googleapis.com/v0/b/natore-52da9.appspot.com/o/ll.jpeg?alt=media&token=97905fd7-2a6d-4e41-abb5-1845dc840b29" 
+        alt="Snow" style="margin-left: auto; margin-right: auto;" width="600" height="800">
+        <h1 class="centered" color = >Bir Zamanlar<br> Sağlıksız Beslenenlere</h1>
+
+    </div>
+
+    <div class ="container">
+        <button class="button">
+            <a href = "{{url_for('users')}}" style= "color:rgb(255, 255, 255)"> Users </h3>
+        </button>
+        <button class="button">
+            <a href = "{{url_for('products')}}"  style= "color:rgb(255, 255, 255)"> Products </h3>
+        </button>
+    </div>
+
+</body>
+</html>
