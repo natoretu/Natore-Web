@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Products</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
         .headtext {
             background-color: #40b8b8; /* Green */
@@ -20,70 +22,70 @@
 
     </head>
 <body>
-
-    <table>
-        <!-- table header -->
-        {% if products %}
+    <table class="table table-striped">
+        <thead>
+            {% if products %}
             <tr>
-                <th>
+                <th scope="col">
                     ---
                 </th>
-                <th class = "headtext" style = "margin-left:18em">
+                <th scope="col">
                     Product Name
                 </th>
-                <th class = "headtext">
+                <th scope="col">
                     Categories
                 </th>
-                <th class = "headtext">
+                <th  scope="col">
                     Market
                 </th>
-                <th class = "headtext">
+                <th scope="col">
                     Properties
                 </th >
-                <th class = "headtext">
+                <th scope="col">
                     Price
                 </th>
-                <th class = "headtext">
+                <th scope="col">
                     Rate
                 </th>
-                <th class = "headtext">
+                <th  scope="col">
                     Quantity
                 </th>
             </tr>
-        {% endif %}
-      
-        <!-- table rows -->
-        {% for product in products %}
-            <tr>
-                <td  class = "headtext">
-                    {{loop.index0+1}}
-                </td>
-                <td>
-                    <a href="{{ url_for('product', product_id=product.id ) }}">{{ product.id }}</a>
-                </td>
-                <td>
-                    {{ product.name }}
-                </td>
-                <td>
-                    {{ product.category }}
-                </td>
-                <td>
-                    {{ product.market }}
-                </td>
-                <td>
-                    {{ product.properties }}
-                </td>
-                <td>
-                    {{ product.price }}
-                </td>
-                <td>
-                    {{ product.rate }}
-                </td>
-                <td>
-                    {{ product.quantity }}
-                </td>
-            </tr>
-        {% endfor %}
+            {% endif %}
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td  class = "headtext" scope="row">
+                        {{loop.index0+1}}
+                    </td>
+                    <td>
+                        <a href="{{ url_for('product', product_id=product.id ) }}">{{ product.id }}</a>
+                    </td>
+                    <td>
+                        {{ product.name }}
+                    </td>
+                    <td>
+                        {{ product.category }}
+                    </td>
+                    <td>
+                        {{ product.market }}
+                    </td>
+                    <td>
+                        {{ product.properties }}
+                    </td>
+                    <td>
+                        {{ product.price }}
+                    </td>
+                    <td>
+                        {{ product.rate }}
+                    </td>
+                    <td>
+                        {{ product.quantity }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
       </table>
     
 </body>

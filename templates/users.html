@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .headtext {
             background-color: #40b8b8; /* Green */
@@ -20,39 +22,38 @@
 </head>
 <body>
 
-    <table>
-        <!-- table header -->
-        {% if users %}
+    <table class="table table-striped">
+        <thead>
+            {% if users %}
             <tr >
                 <th>
                     ---
                 </th>
-                <th class = "headtext" style = "margin-left:18em">
+                <th scope="col">
                     Email
                 </th>
                 
-                <th  class = "headtext">
+                <th scope="col">
                     First Name
                 </th>
 
-                <th  class = "headtext">
+                <th  scope="col">
                     Last Name
                     
                 </th>
-                <th class = "headtext">
+                <th scope="col">
                     Address
                 </th>
-                <th class = "headtext">
+                <th scope="col">
                     Seller / Buyer
                 </th>
             </tr>
         {% endif %}
-      
-        <!-- table rows -->
-        {% for user in users %}
-           
+        </thead>
+        <tbody>
+            {% for user in users %}
             <tr>
-                <td class = "headtext">
+                <td class = "headtext" scope="row">
                     {{loop.index0+1}}
                 </td>
                 <td>
@@ -76,6 +77,16 @@
                 </td>
             </tr>
         {% endfor %}
+        </tbody>
+      </table>
+
+
+    <table>
+        <!-- table header -->
+       
+      
+        <!-- table rows -->
+        
       </table>
 
 </body>

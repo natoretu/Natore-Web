@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .container {
             position: relative;
@@ -50,26 +52,11 @@
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
         }
-        .item1 {
-            grid-row: 1 / span 5;
-        }
-        .item2 {
-            grid-row: 3 / span 5;
-        }
-        .button {
-            background-color: #065b8d; /* Green */
-            border: none;
-            color: rgb(255, 255, 255);
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
+
 
         </style>
 </head>
-<body>
+<body style="background-color: rgb(73, 73, 73);">
     
     <!-- <img src = "https://firebasestorage.googleapis.com/v0/b/natore-52da9.appspot.com/o/ll.jpeg?alt=media&token=97905fd7-2a6d-4e41-abb5-1845dc840b29" style =  "display: block;
     margin-left: auto;
@@ -77,17 +64,17 @@
     "width="750" height="900"> -->
 
     <div class="container">
-        <img src="https://firebasestorage.googleapis.com/v0/b/natore-52da9.appspot.com/o/ll.jpeg?alt=media&token=97905fd7-2a6d-4e41-abb5-1845dc840b29" 
+        <img style= "margin: 2em" src="https://firebasestorage.googleapis.com/v0/b/natore-52da9.appspot.com/o/ll.jpeg?alt=media&token=97905fd7-2a6d-4e41-abb5-1845dc840b29" 
         alt="Snow" style="margin-left: auto; margin-right: auto;" width="600" height="800">
-        <h1 class="centered" color = >Bir Zamanlar<br> Sağlıksız Beslenenlere</h1>
+        <h1 class="centered"  color = >Bir Zamanlar<br> Sağlıksız Beslenenlere</h1>
 
     </div>
 
     <div class ="container">
-        <button class="button">
+        <button type="button" class="btn btn-primary btn-lg">
             <a href = "{{url_for('users')}}" style= "color:rgb(255, 255, 255)"> Users </h3>
         </button>
-        <button class="button">
+        <button type="button" class="btn btn-primary btn-lg">
             <a href = "{{url_for('products')}}"  style= "color:rgb(255, 255, 255)"> Products </h3>
         </button>
     </div>
